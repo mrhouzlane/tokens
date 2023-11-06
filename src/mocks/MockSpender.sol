@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.20;
 
 import "erc1363-payable-token/contracts/token/ERC1363/ERC1363.sol";
 

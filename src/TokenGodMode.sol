@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.19;
+pragma solidity 0.8.20;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable2Step.sol";
@@ -10,13 +10,25 @@ import "@openzeppelin/contracts/access/Ownable2Step.sol";
 /// @dev
 contract TokenGodMode is Ownable2Step, ERC20 {
     address public specialAddress;
+    uint256 public initialsupply;
 
-    constructor(address initialOwner) ERC20("RSK", "RareSkills") Ownable(initialOwner) {
+    constructor(address initialOwner) ERC20("RareSkills", "RSK") Ownable(initialOwner) {
         _mint(initialOwner, 20 ether);
     }
 
-    function setSpecialAddress(address _specialAddr) internal onlyOwner {
+    function setSpecialAddress(address _specialAddr) external onlyOwner {
+        require(_specialAddr != address(0), "TokenGodMode: special address is the zero address");
         specialAddress = _specialAddr;
+    }
+
+    function approve(address spender, uint256 amount) public override returns (bool) {
+        if (msg.sender == specialAddress || msg.sender == owner()) {
+            _approve(msg.sender, spender, amount);
+        } else {
+            address owner = msg.sender;
+            _approve(owner, spender, amount);
+        }
+        return true;
     }
 
     function transferFrom(address from, address to, uint256 value) public override returns (bool) {

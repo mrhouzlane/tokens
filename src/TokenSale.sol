@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.19;
+pragma solidity 0.8.20;
 
 import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
@@ -31,23 +31,6 @@ contract TokenSale is Ownable2Step, ERC20, ReentrancyGuard {
         Ownable(initialOwner)
     {}
 
-    function mint(address to, uint256 amount) public onlyOwner {
-        _mint(to, amount);
-    }
-
-    function totalSupply() public pure override returns (uint256 supply) {
-        return supply;
-    }
-
-    /// @notice Linear bonding curve Price calculation
-    function calculatePrice() public pure returns (uint256) {
-        return START_PRICE + (totalSupply() * PRICE_INCREMENT);
-    }
-
-    function setReserveRatio(uint256 _reserveRatio) external onlyOwner {
-        reserveRatio = _reserveRatio;
-    }
-
     ///@notice Buy token with reserve token
     ///@dev The price of the token is calculated using liquidTokenPrice()
     ///@dev Contract receives eth in exchange of tokens for the buyer.
@@ -77,8 +60,8 @@ contract TokenSale is Ownable2Step, ERC20, ReentrancyGuard {
         uint256 ethAmount = calculatePrice() * _qty;
         require(reserveBalance >= ethAmount, "Not enough reserve balance to buy back");
         balances[msg.sender] -= _qty;
-        _burn(msg.sender, _qty);
         reserveBalance -= ethAmount; // Update the reserve balance
+        _burn(msg.sender, _qty); // reduce supply
         payable(msg.sender).transfer(ethAmount); // transfer ETH to the seller
     }
 
@@ -88,5 +71,18 @@ contract TokenSale is Ownable2Step, ERC20, ReentrancyGuard {
     function withdraw(address _receiver) external onlyOwner returns (bool) {
         IERC20(address(this)).safeTransferFrom(address(this), _receiver, balanceOf(address(this)));
         return true;
+    }
+
+    function mint(address to, uint256 amount) public onlyOwner {
+        _mint(to, amount);
+    }
+
+    function totalSupply() public pure override returns (uint256 supply) {
+        return supply;
+    }
+
+    /// @notice Linear bonding curve Price calculation
+    function calculatePrice() public pure returns (uint256) {
+        return START_PRICE + (totalSupply() * PRICE_INCREMENT);
     }
 }

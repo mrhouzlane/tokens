@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.20;
 
 import {Ownable2Step} from "@openzeppelin/contracts/access/Ownable2Step.sol";
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
@@ -17,7 +17,7 @@ import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 contract TokenWithSanctions is ERC1363, Ownable2Step, MockERC1363Receiver {
     mapping(address => bool) public banned;
 
-    constructor(address intialOwner) ERC20("RSK", "RareSkills") Ownable(intialOwner) {
+    constructor(address intialOwner) ERC20("RareSkills", "RSK") Ownable(intialOwner) {
         _mint(intialOwner, 20 ether);
     }
 
