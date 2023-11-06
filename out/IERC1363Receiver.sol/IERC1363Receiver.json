@@ -1,0 +1,383 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "onTransferReceived",
+      "outputs": [
+        {
+          "internalType": "bytes4",
+          "name": "",
+          "type": "bytes4"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "onTransferReceived(address,address,uint256,bytes)": "88a7ca5c"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"onTransferReceived\",\"outputs\":[{\"internalType\":\"bytes4\",\"name\":\"\",\"type\":\"bytes4\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Interface for any contract that wants to support `transferAndCall` or `transferFromAndCall` from ERC-1363 token contracts.\",\"kind\":\"dev\",\"methods\":{\"onTransferReceived(address,address,uint256,bytes)\":{\"details\":\"Whenever ERC-1363 tokens are transferred to this contract via `transferAndCall` or `transferFromAndCall` by `operator` from `from`, this function is called. NOTE: To accept the transfer, this must return `bytes4(keccak256(\\\"onTransferReceived(address,address,uint256,bytes)\\\"))` (i.e. 0x88a7ca5c, or its own function selector).\",\"params\":{\"data\":\"Additional data with no specified format.\",\"from\":\"The address which are tokens transferred from.\",\"operator\":\"The address which called `transferAndCall` or `transferFromAndCall` function.\",\"value\":\"The amount of tokens transferred.\"},\"returns\":{\"_0\":\"`bytes4(keccak256(\\\"onTransferReceived(address,address,uint256,bytes)\\\"))` if transfer is allowed unless throwing.\"}}},\"title\":\"IERC1363Receiver\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/erc1363-payable-token/contracts/token/ERC1363/IERC1363Receiver.sol\":\"IERC1363Receiver\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":10000000},\"remappings\":[\":@openzeppelin/=lib/openzeppelin-contracts/\",\":@prb/math/=lib/prb-math/src/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc1363-payable-token/=lib/erc1363-payable-token/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":prb-math/=lib/prb-math/src/\",\":prb-test/=lib/prb-math/lib/prb-test/src/\",\"lib/openzeppelin-contracts:@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\"lib/prb-math:@prb/test/=lib/prb-math/lib/prb-test/src/\"]},\"sources\":{\"lib/erc1363-payable-token/contracts/token/ERC1363/IERC1363Receiver.sol\":{\"keccak256\":\"0x3f836d0846d5f46f3d9154342833d28ea04ab48007f8b29631fcd9fd47b3a846\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://96f26b167a755f248556c71fd0ff4e6efb3b96971f5cb72a5515fd192c8c3e6e\",\"dweb:/ipfs/QmPkH4jrgR4fs5DxAoQVesAMz1MjZK9yNPtm38XBQCaz2S\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.20+commit.a1b79de6"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "data",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "onTransferReceived",
+          "outputs": [
+            {
+              "internalType": "bytes4",
+              "name": "",
+              "type": "bytes4"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "onTransferReceived(address,address,uint256,bytes)": {
+            "details": "Whenever ERC-1363 tokens are transferred to this contract via `transferAndCall` or `transferFromAndCall` by `operator` from `from`, this function is called. NOTE: To accept the transfer, this must return `bytes4(keccak256(\"onTransferReceived(address,address,uint256,bytes)\"))` (i.e. 0x88a7ca5c, or its own function selector).",
+            "params": {
+              "data": "Additional data with no specified format.",
+              "from": "The address which are tokens transferred from.",
+              "operator": "The address which called `transferAndCall` or `transferFromAndCall` function.",
+              "value": "The amount of tokens transferred."
+            },
+            "returns": {
+              "_0": "`bytes4(keccak256(\"onTransferReceived(address,address,uint256,bytes)\"))` if transfer is allowed unless throwing."
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin/=lib/openzeppelin-contracts/",
+        "@prb/math/=lib/prb-math/src/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc1363-payable-token/=lib/erc1363-payable-token/",
+        "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "prb-math/=lib/prb-math/src/",
+        "prb-test/=lib/prb-math/lib/prb-test/src/",
+        "lib/openzeppelin-contracts:@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "lib/prb-math:@prb/test/=lib/prb-math/lib/prb-test/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 10000000
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "lib/erc1363-payable-token/contracts/token/ERC1363/IERC1363Receiver.sol": "IERC1363Receiver"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/erc1363-payable-token/contracts/token/ERC1363/IERC1363Receiver.sol": {
+        "keccak256": "0x3f836d0846d5f46f3d9154342833d28ea04ab48007f8b29631fcd9fd47b3a846",
+        "urls": [
+          "bzz-raw://96f26b167a755f248556c71fd0ff4e6efb3b96971f5cb72a5515fd192c8c3e6e",
+          "dweb:/ipfs/QmPkH4jrgR4fs5DxAoQVesAMz1MjZK9yNPtm38XBQCaz2S"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "lib/erc1363-payable-token/contracts/token/ERC1363/IERC1363Receiver.sol",
+    "id": 444,
+    "exportedSymbols": {
+      "IERC1363Receiver": [
+        443
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "33:1187:3",
+    "nodes": [
+      {
+        "id": 427,
+        "nodeType": "PragmaDirective",
+        "src": "33:24:3",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".20"
+        ]
+      },
+      {
+        "id": 443,
+        "nodeType": "ContractDefinition",
+        "src": "225:994:3",
+        "nodes": [
+          {
+            "id": 442,
+            "nodeType": "FunctionDefinition",
+            "src": "1057:160:3",
+            "nodes": [],
+            "documentation": {
+              "id": 429,
+              "nodeType": "StructuredDocumentation",
+              "src": "258:794:3",
+              "text": " @dev Whenever ERC-1363 tokens are transferred to this contract via `transferAndCall` or `transferFromAndCall` by `operator` from `from`, this function is called.\n NOTE: To accept the transfer, this must return\n `bytes4(keccak256(\"onTransferReceived(address,address,uint256,bytes)\"))`\n (i.e. 0x88a7ca5c, or its own function selector).\n @param operator The address which called `transferAndCall` or `transferFromAndCall` function.\n @param from The address which are tokens transferred from.\n @param value The amount of tokens transferred.\n @param data Additional data with no specified format.\n @return `bytes4(keccak256(\"onTransferReceived(address,address,uint256,bytes)\"))` if transfer is allowed unless throwing."
+            },
+            "functionSelector": "88a7ca5c",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "onTransferReceived",
+            "nameLocation": "1066:18:3",
+            "parameters": {
+              "id": 438,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 431,
+                  "mutability": "mutable",
+                  "name": "operator",
+                  "nameLocation": "1102:8:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 442,
+                  "src": "1094:16:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 430,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1094:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 433,
+                  "mutability": "mutable",
+                  "name": "from",
+                  "nameLocation": "1128:4:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 442,
+                  "src": "1120:12:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 432,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1120:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 435,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nameLocation": "1150:5:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 442,
+                  "src": "1142:13:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 434,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1142:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 437,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nameLocation": "1180:4:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 442,
+                  "src": "1165:19:3",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 436,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1165:5:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1084:106:3"
+            },
+            "returnParameters": {
+              "id": 441,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 440,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 442,
+                  "src": "1209:6:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 439,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1209:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1208:8:3"
+            },
+            "scope": 443,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IERC1363Receiver",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 428,
+          "nodeType": "StructuredDocumentation",
+          "src": "59:165:3",
+          "text": " @title IERC1363Receiver\n @dev Interface for any contract that wants to support `transferAndCall` or `transferFromAndCall` from ERC-1363 token contracts."
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          443
+        ],
+        "name": "IERC1363Receiver",
+        "nameLocation": "235:16:3",
+        "scope": 444,
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 3
+}

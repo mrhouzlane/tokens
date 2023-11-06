@@ -1,0 +1,420 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "receiver",
+          "type": "address"
+        }
+      ],
+      "name": "ERC1363EOAReceiver",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        }
+      ],
+      "name": "ERC1363EOASpender",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "receiver",
+          "type": "address"
+        }
+      ],
+      "name": "ERC1363InvalidReceiver",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        }
+      ],
+      "name": "ERC1363InvalidSpender",
+      "type": "error"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {},
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"}],\"name\":\"ERC1363EOAReceiver\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"ERC1363EOASpender\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"}],\"name\":\"ERC1363InvalidReceiver\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"ERC1363InvalidSpender\",\"type\":\"error\"}],\"devdoc\":{\"details\":\"Interface of the ERC-1363 custom errors following the https://eips.ethereum.org/EIPS/eip-6093[ERC-6093] rationale.\",\"errors\":{\"ERC1363EOAReceiver(address)\":[{\"details\":\"Indicates a failure with the token `receiver` as it can't be an EOA. Used in transfers.\",\"params\":{\"receiver\":\"Address to which tokens are being transferred.\"}}],\"ERC1363EOASpender(address)\":[{\"details\":\"Indicates a failure with the token `spender` as it can't be an EOA. Used in approvals.\",\"params\":{\"spender\":\"Address that may be allowed to operate on tokens without being their owner.\"}}],\"ERC1363InvalidReceiver(address)\":[{\"details\":\"Indicates a failure with the token `receiver`. Used in transfers.\",\"params\":{\"receiver\":\"Address to which tokens are being transferred.\"}}],\"ERC1363InvalidSpender(address)\":[{\"details\":\"Indicates a failure with the token `spender`. Used in approvals.\",\"params\":{\"spender\":\"Address that may be allowed to operate on tokens without being their owner.\"}}]},\"kind\":\"dev\",\"methods\":{},\"title\":\"IERC1363Errors\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/erc1363-payable-token/contracts/token/ERC1363/IERC1363Errors.sol\":\"IERC1363Errors\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":10000000},\"remappings\":[\":@openzeppelin/=lib/openzeppelin-contracts/\",\":@prb/math/=lib/prb-math/src/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc1363-payable-token/=lib/erc1363-payable-token/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":prb-math/=lib/prb-math/src/\",\":prb-test/=lib/prb-math/lib/prb-test/src/\",\"lib/openzeppelin-contracts:@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\"lib/prb-math:@prb/test/=lib/prb-math/lib/prb-test/src/\"]},\"sources\":{\"lib/erc1363-payable-token/contracts/token/ERC1363/IERC1363Errors.sol\":{\"keccak256\":\"0x89ae183ae6db6e5a4d8e6ef42daae88745b626af99e63aa900e934fb19a629bd\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c9e5dc1334f866c55e61bf64b3fdfae40076e3e0f8f0a5dd3e666310dec70ce4\",\"dweb:/ipfs/QmezuskExcDYptsyAMKxtyUtq6Xb8FBnFCTNu3fwa5zReZ\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.20+commit.a1b79de6"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "receiver",
+              "type": "address"
+            }
+          ],
+          "type": "error",
+          "name": "ERC1363EOAReceiver"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "spender",
+              "type": "address"
+            }
+          ],
+          "type": "error",
+          "name": "ERC1363EOASpender"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "receiver",
+              "type": "address"
+            }
+          ],
+          "type": "error",
+          "name": "ERC1363InvalidReceiver"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "spender",
+              "type": "address"
+            }
+          ],
+          "type": "error",
+          "name": "ERC1363InvalidSpender"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin/=lib/openzeppelin-contracts/",
+        "@prb/math/=lib/prb-math/src/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc1363-payable-token/=lib/erc1363-payable-token/",
+        "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "prb-math/=lib/prb-math/src/",
+        "prb-test/=lib/prb-math/lib/prb-test/src/",
+        "lib/openzeppelin-contracts:@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "lib/prb-math:@prb/test/=lib/prb-math/lib/prb-test/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 10000000
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "lib/erc1363-payable-token/contracts/token/ERC1363/IERC1363Errors.sol": "IERC1363Errors"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/erc1363-payable-token/contracts/token/ERC1363/IERC1363Errors.sol": {
+        "keccak256": "0x89ae183ae6db6e5a4d8e6ef42daae88745b626af99e63aa900e934fb19a629bd",
+        "urls": [
+          "bzz-raw://c9e5dc1334f866c55e61bf64b3fdfae40076e3e0f8f0a5dd3e666310dec70ce4",
+          "dweb:/ipfs/QmezuskExcDYptsyAMKxtyUtq6Xb8FBnFCTNu3fwa5zReZ"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "lib/erc1363-payable-token/contracts/token/ERC1363/IERC1363Errors.sol",
+    "id": 426,
+    "exportedSymbols": {
+      "IERC1363Errors": [
+        425
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "33:1164:2",
+    "nodes": [
+      {
+        "id": 403,
+        "nodeType": "PragmaDirective",
+        "src": "33:24:2",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".20"
+        ]
+      },
+      {
+        "id": 425,
+        "nodeType": "ContractDefinition",
+        "src": "215:981:2",
+        "nodes": [
+          {
+            "id": 409,
+            "nodeType": "ErrorDefinition",
+            "src": "432:43:2",
+            "nodes": [],
+            "documentation": {
+              "id": 405,
+              "nodeType": "StructuredDocumentation",
+              "src": "246:181:2",
+              "text": " @dev Indicates a failure with the token `receiver` as it can't be an EOA. Used in transfers.\n @param receiver Address to which tokens are being transferred."
+            },
+            "errorSelector": "14b41af4",
+            "name": "ERC1363EOAReceiver",
+            "nameLocation": "438:18:2",
+            "parameters": {
+              "id": 408,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 407,
+                  "mutability": "mutable",
+                  "name": "receiver",
+                  "nameLocation": "465:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 409,
+                  "src": "457:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 406,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "457:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "456:18:2"
+            }
+          },
+          {
+            "id": 414,
+            "nodeType": "ErrorDefinition",
+            "src": "694:41:2",
+            "nodes": [],
+            "documentation": {
+              "id": 410,
+              "nodeType": "StructuredDocumentation",
+              "src": "481:208:2",
+              "text": " @dev Indicates a failure with the token `spender` as it can't be an EOA. Used in approvals.\n @param spender Address that may be allowed to operate on tokens without being their owner."
+            },
+            "errorSelector": "0778150c",
+            "name": "ERC1363EOASpender",
+            "nameLocation": "700:17:2",
+            "parameters": {
+              "id": 413,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 412,
+                  "mutability": "mutable",
+                  "name": "spender",
+                  "nameLocation": "726:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 414,
+                  "src": "718:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 411,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "718:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "717:17:2"
+            }
+          },
+          {
+            "id": 419,
+            "nodeType": "ErrorDefinition",
+            "src": "905:47:2",
+            "nodes": [],
+            "documentation": {
+              "id": 415,
+              "nodeType": "StructuredDocumentation",
+              "src": "741:159:2",
+              "text": " @dev Indicates a failure with the token `receiver`. Used in transfers.\n @param receiver Address to which tokens are being transferred."
+            },
+            "errorSelector": "8a96cd9c",
+            "name": "ERC1363InvalidReceiver",
+            "nameLocation": "911:22:2",
+            "parameters": {
+              "id": 418,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 417,
+                  "mutability": "mutable",
+                  "name": "receiver",
+                  "nameLocation": "942:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 419,
+                  "src": "934:16:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 416,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "934:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "933:18:2"
+            }
+          },
+          {
+            "id": 424,
+            "nodeType": "ErrorDefinition",
+            "src": "1149:45:2",
+            "nodes": [],
+            "documentation": {
+              "id": 420,
+              "nodeType": "StructuredDocumentation",
+              "src": "958:186:2",
+              "text": " @dev Indicates a failure with the token `spender`. Used in approvals.\n @param spender Address that may be allowed to operate on tokens without being their owner."
+            },
+            "errorSelector": "deb6d3ed",
+            "name": "ERC1363InvalidSpender",
+            "nameLocation": "1155:21:2",
+            "parameters": {
+              "id": 423,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 422,
+                  "mutability": "mutable",
+                  "name": "spender",
+                  "nameLocation": "1185:7:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 424,
+                  "src": "1177:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 421,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1177:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1176:17:2"
+            }
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IERC1363Errors",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 404,
+          "nodeType": "StructuredDocumentation",
+          "src": "59:155:2",
+          "text": " @title IERC1363Errors\n @dev Interface of the ERC-1363 custom errors following the https://eips.ethereum.org/EIPS/eip-6093[ERC-6093] rationale."
+        },
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          425
+        ],
+        "name": "IERC1363Errors",
+        "nameLocation": "225:14:2",
+        "scope": 426,
+        "usedErrors": [
+          409,
+          414,
+          419,
+          424
+        ],
+        "usedEvents": []
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 2
+}
