@@ -9,15 +9,11 @@ import "forge-std/console.sol";
 /// @author Mehdi R.
 /// @notice The special address is not the owner
 /// @dev
-contract TokenGodModeTest is Test{
-
+contract TokenGodModeTest is Test {
     TokenGodMode public tokenGodMode;
 
     function setUp() public {
         address owner = vm.addr(0x20);
         tokenGodMode = new TokenGodMode(owner);
     }
-
-    
-   
 }
