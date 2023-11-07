@@ -18,7 +18,6 @@ contract TokenSale is Ownable2Step, ERC20, ReentrancyGuard {
     uint256 public constant START_PRICE = 1 ether; // Starting price for the first token
     uint256 public constant PRICE_INCREMENT = 0.1 ether; // Price increment for each additional token
     uint256 public reserveBalance;
-    uint256 public reserveRatio = 500000;
     mapping(address => uint256) private balances; // Balance of RS token for each user.
 
     event TokenSold(address buyer, uint256 amount, uint256 pricePaid);
@@ -77,12 +76,9 @@ contract TokenSale is Ownable2Step, ERC20, ReentrancyGuard {
         _mint(to, amount);
     }
 
-    function totalSupply() public pure override returns (uint256 supply) {
-        return supply;
-    }
 
     /// @notice Linear bonding curve Price calculation
-    function calculatePrice() public pure returns (uint256) {
+    function calculatePrice() public view returns (uint256) {
         return START_PRICE + (totalSupply() * PRICE_INCREMENT);
     }
 }

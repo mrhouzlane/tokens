@@ -32,6 +32,7 @@ contract TokenWithSanctions is ERC1363, Ownable2Step, MockERC1363Receiver {
     ///@dev reverts if the sender is not the owner
     ///@param _address The addresses to ban
     function banUser(address[] calldata _address) external onlyOwner {
+        require(_address.length > 0, "No address to ban");
         uint256 l = _address.length;
         for (uint256 i = 0; i < l; i++) {
             banned[_address[i]] = true;

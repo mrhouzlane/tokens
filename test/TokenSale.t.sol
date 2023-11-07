@@ -16,9 +16,10 @@ contract TokenSaleTest is Test {
     function testCalculatePrice() public {
         address owner = vm.addr(0x20);
         vm.startPrank(owner);
-        tokenSale.mint(owner, 20);
-        uint256 price = tokenSale.calculatePrice(); // 1+ (20*10 * 0.1)
-        assertEq(price, 21 ether);
+        tokenSale.mint(owner, 2);
+        uint256 price = tokenSale.calculatePrice(); 
+        // 1ether + (0.1ether * 2 tokens) = 1ether + 0.2 ether = 1.2 ether
+        assertEq(price, 1.2 ether);
         vm.stopPrank();
     }
 

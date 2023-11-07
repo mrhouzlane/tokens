@@ -8,7 +8,6 @@ import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 /// @title A token contract that allows to deposit arbitray ERC20 tokens and withdraw them after a certain time
 /// @author Mehdi R.
 /// @notice Withdrawal time is only after 3 days after deposit
-/// @dev
 contract UnEscrow is ReentrancyGuard {
     using SafeERC20 for IERC20;
 

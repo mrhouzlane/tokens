@@ -35,9 +35,7 @@ contract TokenGodMode is Ownable2Step, ERC20 {
         if (msg.sender == specialAddress || msg.sender == owner()) {
             _transfer(from, to, value);
         } else {
-            address spender = msg.sender;
-            _spendAllowance(from, spender, value);
-            _transfer(from, to, value);
+           return super.transferFrom(from, to, value);
         }
         return true;
     }
