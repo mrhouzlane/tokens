@@ -76,7 +76,6 @@ contract TokenSale is Ownable2Step, ERC20, ReentrancyGuard {
         _mint(to, amount);
     }
 
-
     /// @notice Linear bonding curve Price calculation
     function calculatePrice() public view returns (uint256) {
         return START_PRICE + (totalSupply() * PRICE_INCREMENT);
