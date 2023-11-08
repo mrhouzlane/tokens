@@ -15,13 +15,13 @@ import {ReentrancyGuard} from "@openzeppelin/contracts/utils/ReentrancyGuard.sol
 contract TokenSale is Ownable2Step, ERC20, ReentrancyGuard {
     using SafeERC20 for IERC20;
 
-    uint256 public constant START_PRICE = 1 ether; // Starting price for the first token
-    uint256 public constant PRICE_INCREMENT = 0.1 ether; // Price increment for each additional token
+    uint256 public constant BASE_PRICE = 1 ether; 
+    uint256 public constant PRICE_INCREMENT = 0.1 ether;
+
     uint256 public reserveBalance;
     mapping(address => uint256) private balances; // Balance of RS token for each user.
 
-    event TokenSold(address buyer, uint256 amount, uint256 pricePaid);
-    event TokenBought(uint256 amount, uint256 priceReceived);
+    event TokenSold(address indexed buyer, uint256 amount, uint256 pricePaid);
 
     error InsufficientPayment(uint256 payment, uint256 required);
 
@@ -42,26 +42,28 @@ contract TokenSale is Ownable2Step, ERC20, ReentrancyGuard {
         // State changes before external calls
         _mint(msg.sender, _qty); // Mint new tokens for the buyer
         reserveBalance += totalPrice;
-        balances[msg.sender] += _qty;
-        emit TokenSold(msg.sender, _qty, totalPrice);
+        balances[msg.sender] += 1;
+        emit TokenSold(msg.sender, 1, totalPrice);
 
         // Refund
         if (msg.value > totalPrice) {
-            payable(msg.sender).transfer(msg.value - totalPrice);
+            (bool success, ) = msg.sender.call{value: msg.value - totalPrice}("");
+            require(success, "Refund failed");
         }
     }
 
     ///@notice Selling tokens back to the contract
     ///@dev The price of the token is calculated using calculatePrice()
     ///@param _qty The amount of tokens to sell back
-    function buyBack(uint256 _qty) external nonReentrant {
+    function buyBack(uint256 _qty, uint256 _gas) external nonReentrant {
         require(balanceOf(msg.sender) >= _qty, "Not enough tokens");
         uint256 ethAmount = calculatePrice() * _qty;
         require(reserveBalance >= ethAmount, "Not enough reserve balance to buy back");
         balances[msg.sender] -= _qty;
         reserveBalance -= ethAmount; // Update the reserve balance
         _burn(msg.sender, _qty); // reduce supply
-        payable(msg.sender).transfer(ethAmount); // transfer ETH to the seller
+        (bool success, ) = msg.sender.call{value: ethAmount, gas:_gas }("");
+        require(success, "transfer failed");
     }
 
     ///@notice Withdraw reserve tokens from the contract
@@ -78,6 +80,7 @@ contract TokenSale is Ownable2Step, ERC20, ReentrancyGuard {
 
     /// @notice Linear bonding curve Price calculation
     function calculatePrice() public view returns (uint256) {
-        return START_PRICE + (totalSupply() * PRICE_INCREMENT);
+        return BASE_PRICE + (totalSupply() + 1)**2 * PRICE_INCREMENT; 
     }
+
 }

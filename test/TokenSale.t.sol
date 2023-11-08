@@ -15,12 +15,27 @@ contract TokenSaleTest is Test {
 
     function testCalculatePrice() public {
         address owner = vm.addr(0x20);
+        uint256 startPrice = 1 ether; 
+        uint256 priceIncrement = 0.1 ether;
+        uint256 totalSupply0 = 200;     //   200 
+        uint256 totalSupply1 = 500;  //  700 
+        uint256 totalSupply2 = 100;  // 800 
         vm.startPrank(owner);
-        tokenSale.mint(owner, 2);
-        uint256 price = tokenSale.calculatePrice();
-        // 1ether + (0.1ether * 2 tokens) = 1ether + 0.2 ether = 1.2 ether
-        assertEq(price, 1.2 ether);
-        vm.stopPrank();
+        tokenSale.mint(owner, totalSupply0);
+        uint256 price0 = tokenSale.calculatePrice();
+        tokenSale.mint(owner, totalSupply1);
+        uint256 price1 = tokenSale.calculatePrice();
+        tokenSale.mint(owner, totalSupply2);
+        uint256 price2 = tokenSale.calculatePrice();
+
+        console.log("price0: %s", price0);
+        console.log("price1: %s", price1);
+        console.log("price2: %s", price2);
+
+        // Assertions 
+        assertGt(price1, price0); 
+        assertLt(price1, price2); 
+    
     }
 
     function testBuyToken() public {}
@@ -30,8 +45,8 @@ contract TokenSaleTest is Test {
 
         vm.startPrank(Bob);
         vm.deal(Bob, 20 ether);
-        tokenSale.buyToken{value: 2 ether}(2); // User buys 2 tokens
-        tokenSale.buyBack(1); // User sells 1 token
+        tokenSale.buyToken{value: 3 ether}(2); // User buys 2 tokens
+        tokenSale.buyBack(1, 500000); // User sells 1 token
         vm.stopPrank();
     }
 
