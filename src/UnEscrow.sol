@@ -48,7 +48,25 @@ contract UnEscrow is ReentrancyGuard {
     function withdraw(address erc20, address _depositor, uint256 _amount) external nonReentrant onlySeller {
         require(block.timestamp > 3 days + escrow[erc20][_depositor].depositTime, "Withdraw not allowed yet");
         require(escrow[erc20][_depositor].amount >= _amount);
+
+        // Amount to burn (fee on transfer of 0.5%)
+        uint256 amountToBurn = _amount / 200;  // 0.5% of the amount to burn
+        uint256 amountToTransfer = _amount - amountToBurn;
         escrow[erc20][_depositor].amount -= _amount; // prevent reentrancy by substracting out the deposit amount before making the call
-        IERC20(erc20).safeTransfer(msg.sender, _amount);
+
+        // Balance before transfer 
+        uint256 beforeBalance = IERC20(erc20).balanceOf(address(this));
+        IERC20(erc20).safeTransfer(msg.sender, amountToTransfer);
+
+        // Amount transfered 
+        uint256 afterBalance = IERC20(erc20).balanceOf(address(this));
+        uint256 amountTransfered = beforeBalance - afterBalance - amountToBurn;
+
+        if (amountTransfered < amountToTransfer) {
+            uint256 difference = amountToTransfer - amountTransfered;
+            escrow[erc20][_depositor].amount += difference;
+        }
+
+
     }
 }

@@ -15,11 +15,9 @@ contract TokenSaleTest is Test {
 
     function testCalculatePrice() public {
         address owner = vm.addr(0x20);
-        uint256 startPrice = 1 ether; 
-        uint256 priceIncrement = 0.1 ether;
-        uint256 totalSupply0 = 200;     //   200 
-        uint256 totalSupply1 = 500;  //  700 
-        uint256 totalSupply2 = 100;  // 800 
+        uint256 totalSupply0 = 200; //   200
+        uint256 totalSupply1 = 500; //  700
+        uint256 totalSupply2 = 100; // 800
         vm.startPrank(owner);
         tokenSale.mint(owner, totalSupply0);
         uint256 price0 = tokenSale.calculatePrice();
@@ -32,10 +30,9 @@ contract TokenSaleTest is Test {
         console.log("price1: %s", price1);
         console.log("price2: %s", price2);
 
-        // Assertions 
-        assertGt(price1, price0); 
-        assertLt(price1, price2); 
-    
+        // Assertions
+        assertGt(price1, price0);
+        assertLt(price1, price2);
     }
 
     function testBuyToken() public {}

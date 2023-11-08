@@ -5,7 +5,6 @@ import {Test, console2} from "forge-std/Test.sol";
 import {TokenGodMode} from "../src/TokenGodMode.sol";
 import "forge-std/console.sol";
 
-
 contract TokenGodModeTest is Test {
     TokenGodMode public tokenGodMode;
 

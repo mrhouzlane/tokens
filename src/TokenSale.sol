@@ -15,7 +15,7 @@ import {ReentrancyGuard} from "@openzeppelin/contracts/utils/ReentrancyGuard.sol
 contract TokenSale is Ownable2Step, ERC20, ReentrancyGuard {
     using SafeERC20 for IERC20;
 
-    uint256 public constant BASE_PRICE = 1 ether; 
+    uint256 public constant BASE_PRICE = 1 ether;
     uint256 public constant PRICE_INCREMENT = 0.1 ether;
 
     uint256 public reserveBalance;
@@ -47,7 +47,7 @@ contract TokenSale is Ownable2Step, ERC20, ReentrancyGuard {
 
         // Refund
         if (msg.value > totalPrice) {
-            (bool success, ) = msg.sender.call{value: msg.value - totalPrice}("");
+            (bool success,) = msg.sender.call{value: msg.value - totalPrice}("");
             require(success, "Refund failed");
         }
     }
@@ -62,7 +62,7 @@ contract TokenSale is Ownable2Step, ERC20, ReentrancyGuard {
         balances[msg.sender] -= _qty;
         reserveBalance -= ethAmount; // Update the reserve balance
         _burn(msg.sender, _qty); // reduce supply
-        (bool success, ) = msg.sender.call{value: ethAmount, gas:_gas }("");
+        (bool success,) = msg.sender.call{value: ethAmount, gas: _gas}("");
         require(success, "transfer failed");
     }
 
@@ -80,7 +80,6 @@ contract TokenSale is Ownable2Step, ERC20, ReentrancyGuard {
 
     /// @notice Linear bonding curve Price calculation
     function calculatePrice() public view returns (uint256) {
-        return BASE_PRICE + (totalSupply() + 1)**2 * PRICE_INCREMENT; 
+        return BASE_PRICE + (totalSupply() + 1) ** 2 * PRICE_INCREMENT;
     }
-
 }

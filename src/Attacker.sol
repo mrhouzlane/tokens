@@ -29,7 +29,7 @@ contract Attacker {
 
         // Now the Price of tokens is higher
         uint256 sellBackPrice = initialPrice + (buyAmount * 0.1 ether);
-        require(sellBackPrice > cost);  // check if we are making profits by selling back
+        require(sellBackPrice > cost); // check if we are making profits by selling back
         tokenSale.buyBack(sellAmount, 4000000);
 
         // Calculate the profit
