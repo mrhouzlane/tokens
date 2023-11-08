@@ -39,6 +39,14 @@ contract TokenWithSanctions is ERC1363, Ownable2Step, MockERC1363Receiver {
         }
     }
 
+    function unBanUser(address[] calldata _address) external onlyOwner {
+        require(_address.length > 0, "No address to unban");
+        uint256 l = _address.length;
+        for (uint256 i = 0; i < l; i++) {
+            banned[_address[i]] = false;
+        }
+    }
+
     /// @inheritdoc ERC20
     function transfer(address to, uint256 value) public override(ERC20, IERC20) returns (bool) {
         checkBlacklisted(to);
